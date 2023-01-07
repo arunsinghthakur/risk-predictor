@@ -45,7 +45,7 @@ def register_pipelines() -> Dict[str, Pipeline]:
     data_science_pipeline = ds.create_pipeline()
 
     return {
-        "__default__": data_processing_pipeline,
-        "dp": data_processing_pipeline,
-        "ds": data_science_pipeline,
+        "__default__": Pipeline([data_processing_pipeline, data_science_pipeline]),
+        #"dp": data_processing_pipeline,
+        #"ds": data_science_pipeline,
     }
